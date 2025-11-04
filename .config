@@ -1,0 +1,4 @@
+<?php
+return [
+    'api_key' => 'WPISZ_TUTAJ_SWOJ_KLUCZ_API_STRIPE (np. sk_test_...)'
+];
