@@ -1,0 +1,428 @@
+/* ============================================= */
+/* ========= RESET I PODSTAWOWE STYLE ========= */
+/* ============================================= */
+
+/* Resetuje domyślne marginesy i paddingi dla wszystkich elementów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Główne style dla całej strony */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+
+    display: flex;
+    flex-direction: column; /* Ustawia elementy (container i footer) w kolumnie */
+    min-height: 100vh; /* Minimalna wysokość body to 100% wysokości ekranu */
+    align-items: center; /* DODANE: To centruje całą zawartość w poziomie */
+}
+
+/* ======================================== */
+/* ========= NAWIGACJA (MENU GÓRNE) ========= */
+/* ======================================== */
+
+/* Kontener paska nawigacji */
+nav {
+    background-color: #635bff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    width: 100%;
+}
+
+/* Lista wewnątrz nawigacji */
+nav ul {
+    list-style: none;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Elementy listy w nawigacji */
+nav li {
+    flex: 1; /* Każdy element zajmuje tyle samo miejsca */
+}
+
+/* Linki w nawigacji */
+nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Usuwa obramowanie po prawej stronie ostatniego linku */
+nav li:last-child a {
+    border-right: none;
+}
+
+/* Efekt najechania myszką na link w nawigacji */
+nav a:hover {
+    background-color: #0a2540;
+}
+
+/* =========================================== */
+/* ========= GŁÓWNY KONTENER I NAGŁÓWKI ========= */
+/* =========================================== */
+
+/* Główny kontener na treść strony */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    flex: 1;
+    width: 100%;
+}
+
+/* Style dla nagłówków */
+h2, h3 {
+    color: #0a2540;
+    margin-bottom: 1rem;
+}
+
+/* ====================================== */
+/* ========= KOMUNIKATY (ALERTY) ========= */
+/* ====================================== */
+
+/* Podstawowy styl dla wszystkich alertów */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Alert sukcesu (zielony) */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Alert ostrzeżenia (żółty) */
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Alert błędu (czerwony) */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* =================================== */
+/* ========= STYLE TABELI ========= */
+/* =================================== */
+
+/* Główny styl tabeli */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Nagłówek tabeli */
+thead tr {
+    background-color: #635bff;
+    color: white;
+}
+
+/* Komórki nagłówka (th) i danych (td) */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* Pogrubia dolną linię nagłówka */
+th {
+    border-bottom: 2px solid #ddd;
+}
+
+/* Efekt najechania myszką na wiersz tabeli */
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Specjalny styl dla komórek z ID (czcionka monospaced) */
+td.table-id {
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Styl dla komórek z akcjami (np. linki Edytuj/Usuń) */
+td.table-actions {
+    text-align: center;
+}
+
+/* ======================================== */
+/* ========= STYLE LINKÓW (W TABELI) ========= */
+/* ======================================== */
+
+.link-primary {
+    color: #635bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.link-secondary {
+    color: #0a2540;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.link-danger {
+    color: #dc3545;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Efekt podkreślenia linków po najechaniu */
+.link-primary:hover,
+.link-secondary:hover,
+.link-danger:hover {
+    text-decoration: underline;
+}
+
+/* ===================================== */
+/* ========= STYLE FORMULARZY ========= */
+/* ===================================== */
+
+/* Kontener grupujący pola formularza */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+/* Tytuł (legenda) dla fieldsetu */
+legend {
+    padding: 0 10px;
+    color: #0a2540;
+    font-weight: bold;
+}
+
+/* Etykiety pól formularza */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Pola tekstowe, email oraz przyciski */
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Styl dla przycisków typu submit i button */
+input[type="submit"],
+button {
+    background-color: #635bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efekt najechania na przyciski */
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0a2540;
+}
+
+/* ====================================== */
+/* ========= POZOSTAŁE STYLE ========= */
+/* ====================================== */
+
+/* Klasa dla tekstu ze statystykami */
+.stats {
+    margin-top: 15px;
+    color: #666;
+}
+
+/* ================================================= */
+/* ========= STYLE RESPONSIVE (MOBILNE) ========= */
+/* ================================================= */
+
+/* Stosuje te style na ekranach mniejszych niż 768px */
+@media (max-width: 768px) {
+    /* Zmienia nawigację z poziomej na pionową */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Zmniejsza czcionkę w tabeli */
+    table {
+        font-size: 0.9em;
+    }
+    
+    /* Zmniejsza padding w komórkach tabeli */
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* ================================================= */
+/* ========= STYLE STRONY GŁÓWNEJ (KOKPITU) ========= */
+/* ================================================= */
+
+/* Linia oddzielająca */
+.home-divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+/* --- Sekcja Szybkich Akcji (przyciski) --- */
+.home-actions-container {
+    display: flex;
+    flex-wrap: wrap; /* Zawijanie przycisków na mniejszych ekranach */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Ogólny styl przycisku akcji */
+.home-action-btn {
+    flex: 1; /* Elastyczne rozciąganie */
+    min-width: 200px;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Przycisk główny (fioletowy) */
+.home-action-btn.primary {
+    background-color: #635bff;
+    color: white;
+}
+
+.home-action-btn.primary:hover {
+    background-color: #0a2540;
+}
+
+/* Przycisk dodatkowy (szary) */
+.home-action-btn.secondary {
+    background-color: #f4f4f4;
+    color: #0a2540;
+    border: 1px solid #ddd;
+}
+
+.home-action-btn.secondary:hover {
+    background-color: #e9e9e9;
+}
+
+/* --- Sekcja Treści (Statystyki i Ostatni Klienci) --- */
+.home-content-container {
+    display: flex;
+    flex-wrap: wrap; /* Zawijanie kolumn */
+    gap: 20px;
+}
+
+/* Kolumna ze statystykami */
+.home-stats-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Kolumna z ostatnimi klientami (szersza) */
+.home-recent-col {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Wspólny styl dla "kart" (białe tło z cieniem) */
+.home-card {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+/* Styl tytułu w karcie statystyk */
+.home-stats-title {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Styl liczby w karcie statystyk */
+.home-stats-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #635bff;
+    margin-top: 5px;
+}
+
+/* --- Lista ostatnich klientów (wewnątrz karty) --- */
+.home-recent-list {
+    list-style: none;
+    padding: 0; 
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centruje w pionie */
+}
+
+/* Pojedynczy element na liście ostatnich klientów */
+.home-recent-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Usuwa linię pod ostatnim elementem */
+.home-recent-list li:last-child {
+    border-bottom: none;
+}
+
+/* Styl dla adresu email na liście */
+.home-recent-email {
+    color: #666;
+    font-size: 0.9em;
+}
+
+
+footer {
+    width: 100%;
+    background-color: #0a2540; /* Ciemny kolor pasujący do nawigacji */
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    /* margin-top: 2rem; - nie jest już potrzebny, gdy .container rośnie */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* Cień na górze stopki */
+}
