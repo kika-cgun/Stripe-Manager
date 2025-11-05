@@ -8,17 +8,14 @@ $success = false;
 
 $customer_id = $_GET['id'] ?? $_POST['customer_id'] ?? null;
 
-// 2. Obsługa formularza (metoda POST) - AKTUALIZACJA DANYCH
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($customer_id)) {
     $imie = $_POST['imie'] ?? '';
     $nazwisko = $_POST['nazwisko'] ?? '';
     $email = $_POST['email'] ?? '';
 
     try {
-        // Używamy $dao do aktualizacji
         $dao->updateCustomer($customer_id, $imie, $nazwisko, $email);
         
-        // Przekieruj z powrotem na tę samą stronę z informacją o sukcesie
         header('Location: index.php?page=update_customer&id=' . urlencode($customer_id) . '&success=1');
         exit;
         
@@ -27,23 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($customer_id)) {
     }
 }
 
-// 3. Sprawdź, czy jest komunikat o sukcesie (z przekierowania)
 if (isset($_GET['success']) && $_GET['success'] == '1') {
     $success = true;
 }
 
-// 4. Pobieranie danych do formularza (metoda GET lub po błędzie POST)
 if (!empty($customer_id)) {
     try {
-        // Używamy $dao do pobrania aktualnych danych klienta
         $customer = $dao->retrieveCustomer($customer_id);
     } catch (Exception $e) {
         $error = "Nie można wczytać danych klienta: " . $e->getMessage();
-        $customer = null; // Upewnij się, że formularz się nie wyświetli, jeśli był błąd
+        $customer = null;
     }
 }
 
-// 5. Pomocnik do rozdzielenia imienia i nazwiska w formularzu
+// Rozdzielenie imienia i nazwiska w formularzu
 $form_imie = '';
 $form_nazwisko = '';
 if ($customer && $customer->name) {
@@ -60,8 +54,6 @@ if ($customer && $customer->name) {
         ✓ Klient został pomyślnie zaktualizowany!
     </div>
 <?php endif; ?>
-
-
 
 
 <?php if ($customer): ?>
