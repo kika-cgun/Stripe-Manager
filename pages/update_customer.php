@@ -102,8 +102,8 @@ if ($customer && $customer->name) {
                 <input type="text" name="id" id="customer_id_search" 
                        placeholder="Podaj ID klienta (np. cus_...)">
              </div>
-             <button type="submit">Wczytaj klienta</button>
         </fieldset>
+        <button type="submit">Wczytaj klienta</button>
     </form>
     
 <?php endif; ?>

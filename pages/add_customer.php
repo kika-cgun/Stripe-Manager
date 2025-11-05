@@ -60,10 +60,10 @@ if (isset($_GET['success']) && $_GET['success'] == '1') {
                    placeholder="Podaj email"
                    required>
         </div>
-        <div>
-            <input type="submit" value="Dalej">
-        </div>
     </fieldset>
+    <div>
+        <input type="submit" value="Dalej">
+    </div>
 </form>
 </body>
 </html>
