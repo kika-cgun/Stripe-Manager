@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image/x-icon" href="style/favicon.ico">
     <title><?php echo $pageTitle ?? 'Stripe Customer Management'; ?></title>
 </head>
 <body>
